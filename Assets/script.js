@@ -1,3 +1,40 @@
+// Factored code
+  // reference to #add-employees-btn
+
+  const addEmployeesBtn = document.querySelector('#add-employees-btn');
+  let employeesArray = []
+  // Collect employee data
+  const collectEmployees = function() {
+    // TODO: Get user input to create and return an array of employee objects
+    let keepLooping = true;
+    while(keepLooping) {
+        let employeeInfo = {
+            firstName: prompt("First Name"),
+            lastName: prompt("Last Name"),
+            salary: parseInt(prompt("Salary"))
+        }
+        employeesArray.push(employeeInfo)
+        let keepAdding = confirm("Would you like to continue?")
+        if (keepAdding == false) {
+          keepLooping = false;
+        }
+    }
+    return employeesArray;
+  }
+  // Average Salary displayed
+  const displayAverageSalary = function(employeesArray) {
+    let totalSalary = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
+    console.log("The average employee salary between the employees is $" + (
+      totalSalary / employeesArray.length));
+  }
+  // Choose an employee at random
+  const getRandomEmployee = function(employeesArray) {
+    // TODO: Select and display a random employee
+    const randomIndex = Math.floor(Math.random() * employeesArray.length);
+    const randomEmployee = employeesArray[randomIndex];
+    console.log(`Congrats ${randomEmployee.firstName} ${randomEmployee.lastName}, the random winner!`);
+  }
+
 /*
   ====================
   STARTER CODE
@@ -63,3 +100,5 @@ const displayEmployees = function(employeesArray) {
   
   // Add event listener to 'Add Employees' button
   addEmployeesBtn.addEventListener('click', trackEmployeeData);
+
+  
