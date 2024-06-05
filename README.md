@@ -40,4 +40,4 @@ This app is protected under the MIT license.
  You can also find me on GitHub at: [BBrantly90](https://www.github.com/BBrantly90)
 
  ## Deployed Application 🚀
- This application was deplopyed at 
+ This application was deplopyed at [BBrantly90](https://bbrantly90.github.io Payroll-Tracker/)
